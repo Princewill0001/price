@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APT Logistics Services | UNIBEN Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">APT <span>Logistics</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#plans">Plans</a></li>
+            <li><button class="login-btn" onclick="openModal()">Login</button></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Fast, Reliable Food Delivery Within UNIBEN</h1>
+            <p>Your trusted campus logistics and food delivery partner serving students and lecturers.</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn-primary">Order Now</a>
+                <a href="#plans" class="btn-secondary">View Plans</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-utensils"></i>
+                <h3>Food Delivery</h3>
+                <p>Pickup and delivery from campus restaurants and cafeterias.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shopping-basket"></i>
+                <h3>Groceries</h3>
+                <p>Snacks, beverages, and daily essentials delivered to your location.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-box"></i>
+                <h3>Parcels</h3>
+                <p>Safe delivery of packages and academic materials within campus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section bg-light">
+        <h2 class="section-title">Available to Order</h2>
+        <div class="menu-container">
+            <div class="menu-card">
+                <img src="Photos/jollof.jpg" alt="Jollof Rice">
+                <div class="menu-info">
+                    <h4>Jollof Rice & Chicken</h4>
+                    <p class="price">₦2,500</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/fried rice.jpg" alt="Fried Rice">
+                <div class="menu-info">
+                    <h4>Special Fried Rice</h4>
+                    <p class="price">₦2,200</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/amala.jpg" alt="Amala">
+                <div class="menu-info">
+                    <h4>Amala & Ewedu</h4>
+                    <p class="price">₦1,800</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/spag.jpg" alt="Spaghetti">
+                <div class="menu-info">
+                    <h4>Stir-fry Spaghetti</h4>
+                    <p class="price">₦1,500</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/small chops.jpg" alt="Small Chops">
+                <div class="menu-info">
+                    <h4>Small Chops Combo</h4>
+                    <p class="price">₦1,200</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/Monster.jpg" alt="Monster">
+                <div class="menu-info">
+                    <h4>Monster Energy</h4>
+                    <p class="price">₦1,200</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/coke.jpg" alt="Coke">
+                <div class="menu-info">
+                    <h4>Coca Cola</h4>
+                    <p class="price">₦300</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="Photos/chicken and chips.jpg" alt="Fries">
+                <div class="menu-info">
+                    <h4>Assorted Fries</h4>
+                    <p class="price">₦2,000</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="section">
+        <h2 class="section-title">Plans & Pricing</h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>Basic</h3>
+                <p>Pay‑as‑you‑go delivery.</p>
+                <p class="price">Standard Rates</p>
+            </div>
+            <div class="plan-card featured">
+                <div class="badge">Popular</div>
+                <h3>Student</h3>
+                <p>Discounted rates & priority routes.</p>
+                <p class="price">Monthly Sub</p>
+            </div>
+            <div class="plan-card">
+                <h3>Premium</h3>
+                <p>Unlimited monthly deliveries.</p>
+                <p class="price">Elite Support</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Login to APT</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cartItems" class="cart-body">
+            <p class="empty-msg">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="cartTotal">₦0</span></div>
+            <button class="checkout-btn" onclick="checkout()">Checkout via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3>APT Logistics</h3>
+                <p>University of Benin (UNIBEN).</p>
+                <p>Customer Service: 09053194315.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="#home" style="color:white">Home</a> | <a href="#services" style="color:white">Services</a></p>
+            </div>
+        </div>
+        <p class="copy">&copy; 2026 APT Logistics Services. All rights reserved.</p>
+    </footer>
+
+    <script src="scricpt.js"></script>
+</body>
+</html>
